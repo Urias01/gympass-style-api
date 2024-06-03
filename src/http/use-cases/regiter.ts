@@ -1,5 +1,5 @@
 import { hash } from 'bcryptjs'
-import { UserRepository } from '@/repositories/users-repository'
+import { UsersRepository } from '@/repositories/users-repository'
 import { UserAlreadyExistsError } from './errors/user-alredy-exists-error'
 import { User } from '@prisma/client'
 
@@ -14,7 +14,7 @@ interface RegisterUseCaseRespose {
 }
 
 export class RegisterUseCase {
-  constructor(private usersRepository: UserRepository) {}
+  constructor(private usersRepository: UsersRepository) {}
 
   async execute({
     name,
