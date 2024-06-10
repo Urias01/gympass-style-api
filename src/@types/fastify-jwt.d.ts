@@ -1,0 +1,9 @@
+import '@fastiy/jwt'
+
+declare module '@fastify/jwt' {
+  export interface FastifyJWT {
+    user: {
+      sub: number
+    }
+  }
+}
