@@ -19,14 +19,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: npm
+          cache: 'npm'
 
       - run: npm ci
 
       - run: npm run test:e2e
         env:
           JWT_SECRET: testing
-          DATABASE_URL: "postgresql://docker:docker@localhost:5431/apisolid?schema=public"
+          DATABASE_URL: "postgresql://docker:docker@localhost:5432/apisolid?schema=public"
